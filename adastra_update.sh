@@ -45,5 +45,5 @@ parallel -j $threads process_file ::: $(cat ${file_list}) ::: 3 ::: ${discr} :::
 
 scripts/adastra_pwm.py ${output}
 
-rm ${factor}.filtered ${factor}.snps
-find pwm_results_${index} -maxdepth 1 -type f -size 0 -delete
+rm *.filtered *.snps
+find pwm_results_* -maxdepth 1 -type f -size 0 -delete
