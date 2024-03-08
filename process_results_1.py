@@ -10,7 +10,7 @@ import sys
 import os
 
 p_value = float(sys.argv[1])
-adastra = '/Users/subpolare/Desktop/Allele-specific/adastra/bill-cipher/release_dump/TF/'
+adastra = sys.argv[2]
 
 warnings.simplefilter(action = 'ignore', category = Warning)
 
