@@ -16,6 +16,7 @@ mkdir pwm_results_0
 mkdir pwm_results_1
 mkdir pwm_results_2
 mkdir pwm_results_3
+mkdir filtered
 
 process_file() {
     tf=$1
@@ -26,13 +27,13 @@ process_file() {
     factor=$(basename ${tf} | cut -f1 -d '.' | cut -f1 -d '_')
 
     scripts/asb.py ${tf} 0.05 ${factor}
-    scripts/make_snps_list.sh ${factor}.filtered ${genome} > ${factor}.snps
+    scripts/make_snps_list.sh filtered/${factor}.filtered ${genome} > ${factor}.snps
 
     java -cp scripts/ape-3.0.6.jar ru.autosome.perfectosape.SNPScan hocomoco/v12/pwm/${factor}.H12RSNP.${index}.*.pwm ${factor}.snps --single-motif -F 1 -P 1 -d ${discr} > pwm_results_${index}/${factor}.perfectos
 
-    conc_adastra=$(grep -E 'Concordant' ${factor}.filtered | wc -l)
-    disc_adastra=$(grep -E 'Discordant' ${factor}.filtered | wc -l)
-    nohit_adastra=$(grep -E 'No Hit' ${factor}.filtered | wc -l)
+    conc_adastra=$(grep -E 'Concordant' filtered/${factor}.filtered | wc -l)
+    disc_adastra=$(grep -E 'Discordant' filtered/${factor}.filtered | wc -l)
+    nohit_adastra=$(grep -E 'No Hit' filtered/${factor}.filtered | wc -l)
     scripts/concordance.py pwm_results_${index}/${factor}.perfectos ${tf} ${conc_adastra} ${disc_adastra} ${nohit_adastra} ${factor} ${p_value} >> adastra_pwm_${index}.tsv
 }
 
@@ -45,5 +46,5 @@ parallel -j $threads process_file ::: $(cat ${file_list}) ::: 3 ::: ${discr} :::
 
 scripts/adastra_pwm.py ${output}
 
-rm *.filtered *.snps
+rm *.snps
 find pwm_results_* -maxdepth 1 -type f -size 0 -delete
