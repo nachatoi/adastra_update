@@ -9,4 +9,4 @@ short_name = str(sys.argv[3])
 
 tf = pd.read_csv(factor, sep = '\t')
 tf = tf[tf[['fdrp_bh_ref', 'fdrp_bh_alt']].min(axis = 1) < p]
-tf.to_csv(short_name + '.filtered', sep = '\t', index = False)
+tf.to_csv('filtered/' + short_name + '.filtered', sep = '\t', index = False)
