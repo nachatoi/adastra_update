@@ -69,3 +69,6 @@ rs4742379       AGGTCTGGGGTAAAAAGGCAGAGCTCACT[C/G]CTAGTGATGCTAATCTCCTCTGGCCCACGA
 | Factor | Adastra_concordance | Concordance | Adastra_discordance | Discordance | Adastra_hit | Hit | Adastra_no_hit | No_hit | 0 | 1 | 2 | 3 | 
 | :-----: | :-----: | :-----: | :-----: | :-----: | :-----: | :-----: | :-----: | :-----: | :-----: | :-----: | :-----: | :-----: |
 | FOXA2 | 211 | 274 | 23 | 39 | 234 | 314 | 1260 | 1180 | 1494 | 0 | 0 | 0 | 
+| ATF3 | 62 | 111 | 19 | 24 | 81 | 136 | 650 | 595 | 0 | 0 | 731 | 0 | 
+| CTCF | 4641 | 5033 | 1772 | 1773 | 6413 | 6853 | 23106 | 22735 | 29588 | 0 | 0 | 0 | 
+| ANDR | 743 | 1212 | 491 | 814 | 1234 | 2031 | 21696 | 20901 | 22932 | 0 | 0 | 0 | 
