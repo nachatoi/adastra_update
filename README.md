@@ -60,5 +60,6 @@ rs4742379       AGGTCTGGGGTAAAAAGGCAGAGCTCACT[C/G]CTAGTGATGCTAATCTCCTCTGGCCCACGA
 * 0, 1, 2, 3 — указывают на то, какой по номеру мотив взят для данного транскрипционного фактора скриптом `adastra_pwm.py`.
 
 ```
-Factor	Adastra_concordance	Concordance	Adastra_discordance	Discordance	Adastra_hit	Hit	Adastra_no_hit	No_hit	0	1	2	3
-FOXA2	211	274	23	39	234	314	1260	1180	1494	0	0	0
+| Factor | Adastra_concordance | Concordance | Adastra_discordance | Discordance | Adastra_hit | Hit | Adastra_no_hit | No_hit | 0 | 1 | 2 | 3 | 
+| :-----: | :-----: | :-----: | :-----: | ----- | ----- |
+| FOXA2 | 211 | 274 | 23 | 39 | 234 | 314 | 1260 | 1180 | 1494 | 0 | 0 | 0 | 
